@@ -24,7 +24,9 @@
 "endfunc
 
 filetype plugin indent on
-colo evening
+set background=dark
+set t_Co=256
+colorscheme molokai
 set nu
 set hlsearch
 set expandtab
