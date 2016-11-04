@@ -1,11 +1,21 @@
+succeed=true
+
+Error() {
+    succeed=false
+    echo -e "\e[31;1m [$1] \e[0m"
+}
+
+Info() {
+    echo -e "\e[32;1m [$1] \e[0m"
+}
 
 CopyFile() {
     cp -r $1 $2
 
     if [ $? == 0 ]; then
-        echo "$1 configurated done!"
+        Info "$1 configurated done"
     else
-        echo "$1 configurated error!"
+        Error "$1 configurated error!"
     fi
 }
 
@@ -17,4 +27,8 @@ if [ ! -d ~/.vim ]; then
 fi
 CopyFile colors ~/.vim
 
-echo Done
+if [ $succeed == true ]; then
+    Info "DONE!"
+else
+    Error "ERROR!"
+fi
