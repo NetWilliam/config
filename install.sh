@@ -25,7 +25,8 @@ CopyFile vimrc ~/.vimrc
 if [ ! -d ~/.vim ]; then
     mkdir ~/.vim
 fi
-CopyFile colors ~/.vim
+
+CopyFile vim/\* ~/.vim
 
 if [ $succeed == true ]; then
     Info "DONE!"
