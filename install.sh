@@ -35,6 +35,8 @@ fi
 CopyFile vim/\* ~/.vim
 MoveFile ~/.vim/vimrc ~/.vimrc
 
+CopyFile tmux/tmux.conf ~/.tmux.conf
+
 if [ $succeed == true ]; then
     Info "DONE!"
 else
