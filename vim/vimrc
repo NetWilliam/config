@@ -22,7 +22,7 @@
 "        call setline(7,"")
 "    endif
 "endfunc
-
+" syntax on Mac System use
 filetype plugin indent on
 set background=dark
 set t_Co=256
