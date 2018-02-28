@@ -5,19 +5,21 @@ if [ $# -lt 1 ]; then
 fi
 
 pattern=$(expr "$*" : '.*@\(.*\):.*')
-
-while read line
-do
-    host=($line)
-    if [ ${host[0]} = $pattern ]; then
-        ip=${host[1]}
-    fi
-done < /etc/password/host
-
 info="$*"
 
-if [ -n "$ip" ]; then
-    info=${*/$pattern/$ip}
+if [ -n "$pattern" ]; then
+    while read line
+    do
+        host=($line)
+        if [ ${host[0]} = $pattern ]; then
+            ip=${host[1]}
+        fi
+    done < /etc/password/host
+    
+    
+    if [ -n "$ip" ]; then
+        info=${*/$pattern/$ip}
+    fi
 fi
 
 echo $info
