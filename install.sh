@@ -1,3 +1,5 @@
+# /bin/bash
+
 succeed=true
 
 Error() {
