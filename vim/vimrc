@@ -1,4 +1,4 @@
-"autocmd BufNewFile *.c,*.cc,*.cpp,*.py,*.sh,*.java exec ":call SetTitle()"                                                                                              
+"autocmd BufNewFile *.c,*.cc,*.cpp,*.py,*.sh,*.java exec ":call SetTitle()"
 "
 "func SetInfo()
 "    call setline(2, "   File Name   : ".expand("%"))
@@ -56,8 +56,22 @@ function ClosePair(char)
     endif
 endfunction
 
+" 保存时自动格式化代码, 针对所有支持的文件
+au BufWrite * :Autoformat
 
-"autoload
+" 自动格式化python代码
+" au BufWrite *.py :Autoformat
+
+" 安装了yapf以后, 代码风格默认情况下是pep8，还可以选择google,facebook和chromium
+" let g:formatter_yapf_style = 'pep8'
+
+let g:formatdef_allman = '"astyle --style=allman --pad-oper"'
+
+" 显示错误详情
+" let g:autoformat_verbosemode=1
 
 
-"
+" plugin
+"   ├── autoformat.vim
+"   ├── defaults.vim
+"   └── utils.vim
