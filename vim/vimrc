@@ -29,7 +29,7 @@ set background=dark
 set t_Co=256
 colorscheme molokai
 
-set mouse=a
+" set mouse=a
 set nu
 set hlsearch
 set expandtab

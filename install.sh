@@ -1,15 +1,8 @@
 # /bin/bash
 
+source ./common.sh
+
 succeed=true
-
-Error() {
-    succeed=false
-    echo -e "\e[31;1m [$1] \e[0m"
-}
-
-Info() {
-    echo -e "\e[32;1m [$1] \e[0m"
-}
 
 CopyFile() {
     cp -r $1 $2
